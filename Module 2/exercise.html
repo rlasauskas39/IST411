@@ -27,7 +27,7 @@
     <p><img src="" alt=""></p><!--Fill in Image-->
   </div>
 
-    <div class="myflexboxColumn" style="background-color: red;">
+    <div class="myflexboxColumn" style="background-color: lightcoral;">
       <h2>Video</h2>
       <p><video src="" controls>
         <source src="" type="">
@@ -35,7 +35,7 @@
       </video></p>
     </div>
 
-    <div class="myflexboxColumn" style="background-color: maroon;">
+    <div class="myflexboxColumn" style="background-color: indianred;">
       <h2>Geolocation</h2>
       <p>Click button for your current coordinates.</p>
       <button onclick="getLocation()">Get Location</button>
@@ -55,7 +55,7 @@
     }
   
     function showPosition(position){
-      x.innerHTML="Latitude: "+ position.coords.latitiude +"<br>Longitude: " + position.coords.longitude;
+      x.innerHTML="Latitude: "+ position.coords.latitude +"<br>Longitude: " + position.coords.longitude;
     }
   </script>
 </body>
