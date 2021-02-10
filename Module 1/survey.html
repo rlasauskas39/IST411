@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NFL Football Survey</title>
+
+  <link rel="stylesheet" href="survey.css">
+</head>
+
+<!--<img src="nfl.jpg" alt="NFL Logo" width="550" height="300" style="width: 50%;">-->
+<h1>NFL Football Survey Form</h1>
+<p>* = required field</p><br><br>
+
+<body>
+  <form onsubmit="alert('Your Response Has Been Recorded, Thank You')">
+  <!--Name Text Field-->
+  <label for="fname">Name<sup>*</sup></label><br>
+  <input type="text" id="fname" name="fname" placeholder="Type Name Here" size="50" required><br><br><br>
+
+  <!--Gender Radio Buttons-->
+  <label for="gender">Gender<sup>*</sup></label><br>
+  <input type="radio" id="male" name="gender" value="male" required>
+  <label for="male" style="margin-left: 0px; font-size: 20px;">Male</label><br>
+  <input type="radio" id="female" name="gender" value="female">
+  <label for="female" style="margin-left: 0px; font-size: 20px;">Female</label><br>
+  <input type="radio" id="other" name="gender" value="other">
+  <label for="other" style="margin-left: 0px; font-size: 20px;">Other</label><br><br><br>
+
+<!--Familiarity Radio Buttons-->
+  <label for="fam">Familiarity with NFL Football<sup>*</sup><small style="color: gray;">1 is no idea and 5 is very familiar</small></label><br>
+  <input type="radio" id="one" name="fam" value="one" required>
+  <label for="one" style="margin-left: 0px; font-size: 20px;">1</label><br>
+  <input type="radio" id="two" name="fam" value="two">
+  <label for="two" style="margin-left: 0px; font-size: 20px;">2</label><br>
+  <input type="radio" id="three" name="fam" value="three">
+  <label for="three" style="margin-left: 0px; font-size: 20px;">3</label><br>
+  <input type="radio" id="four" name="fam" value="four">
+  <label for="four" style="margin-left: 0px; font-size: 20px;">4</label><br>
+  <input type="radio" id="five" name="fam" value="five">
+  <label for="five" style="margin-left: 0px; font-size: 20px;">5</label><br><br><br>
+
+  <!--Favorite Teams Checkbox-->
+  <label for="team">Favorite Team(s)</label><br>
+  <input type="checkbox" id="team1" name="team" value="cardinals">
+  <label for="team1" style="margin-left: 0px; font-size: 20px;">Arizona Cardinals</label><br>
+  <input type="checkbox" id="team2" name="team" value="falcons">
+  <label for="team2" style="margin-left: 0px; font-size: 20px;">Atlanta Falcons</label><br>
+  <input type="checkbox" id="team3" name="team" value="bills">
+  <label for="team3" style="margin-left: 0px; font-size: 20px;">Buffalo Bills</label><br>
+  <input type="checkbox" id="team4" name="team" value="ravens">
+  <label for="team4" style="margin-left: 0px; font-size: 20px;">Baltimore Ravens</label><br>
+  <input type="checkbox" id="team5" name="team" value="panthers">
+  <label for="team5" style="margin-left: 0px; font-size: 20px;">Carolina Panthers</label><br>
+  <input type="checkbox" id="team6" name="team" value="bengals">
+  <label for="team6" style="margin-left: 0px; font-size: 20px;">Cincinnati Bengals</label><br>
+  <input type="checkbox" id="team7" name="team" value="browns">
+  <label for="team7" style="margin-left: 0px; font-size: 20px;">Cleveland Browns</label><br>
+  <input type="checkbox" id="team8" name="team" value="bears">
+  <label for="team8" style="margin-left: 0px; font-size: 20px;">Chicago Bears</label><br>
+  <input type="checkbox" id="team9" name="team" value="cowboys">
+  <label for="team9" style="margin-left: 0px; font-size: 20px;">Dallas Cowboys</label><br>
+  <input type="checkbox" id="team10" name="team" value="broncos">
+  <label for="team10" style="margin-left: 0px; font-size: 20px;">Denver Broncos</label><br>
+  <input type="checkbox" id="team11" name="team" value="lions">
+  <label for="team11" style="margin-left: 0px; font-size: 20px;">Detroit Lions</label><br>
+  <input type="checkbox" id="team12" name="team" value="packers">
+  <label for="team12" style="margin-left: 0px; font-size: 20px;">Green Bay Packers</label><br>
+  <input type="checkbox" id="team13" name="team" value="texans">
+  <label for="team13" style="margin-left: 0px; font-size: 20px;">Houston Texans</label><br>
+  <input type="checkbox" id="team14" name="team" value="colts">
+  <label for="team14" style="margin-left: 0px; font-size: 20px;">Indianapolis Colts</label><br>
+  <input type="checkbox" id="team15" name="team" value="chiefs">
+  <label for="team15" style="margin-left: 0px; font-size: 20px;">Kansas City Chiefs</label><br>
+  <input type="checkbox" id="team25" name="team" value="raiders">
+  <label for="team25" style="margin-left: 0px; font-size: 20px;">Las Vegas Raiders</label><br>
+  <input type="checkbox" id="team16" name="team" value="chargers">
+  <label for="team16" style="margin-left: 0px; font-size: 20px;">Los Angeles Chargers</label><br>
+  <input type="checkbox" id="team17" name="team" value="rams">
+  <label for="team17" style="margin-left: 0px; font-size: 20px;">Los Angeles Rams</label><br>
+  <input type="checkbox" id="team18" name="team" value="jaguars">
+  <label for="team18" style="margin-left: 0px; font-size: 20px;">Jacksonville Jaguars</label><br>
+  <input type="checkbox" id="team19" name="team" value="dolphins">
+  <label for="team19" style="margin-left: 0px; font-size: 20px;">Miami Dolphins</label><br>
+  <input type="checkbox" id="team20" name="team" value="vikings">
+  <label for="team20" style="margin-left: 0px; font-size: 20px;">Minnesota Vikings</label><br>
+  <input type="checkbox" id="team21" name="team" value="patriots">
+  <label for="team21" style="margin-left: 0px; font-size: 20px;">New England Patriots</label><br>
+  <input type="checkbox" id="team22" name="team" value="saints">
+  <label for="team22" style="margin-left: 0px; font-size: 20px;">New Orleans Saints</label><br>
+  <input type="checkbox" id="team23" name="team" value="giants">
+  <label for="team23" style="margin-left: 0px; font-size: 20px;">New York Giants</label><br>
+  <input type="checkbox" id="team24" name="team" value="jets">
+  <label for="team24" style="margin-left: 0px; font-size: 20px;">New York Jets</label><br>
+  <input type="checkbox" id="team26" name="team" value="eagles">
+  <label for="team26" style="margin-left: 0px; font-size: 20px;">Philadelphia Eagles</label><br>
+  <input type="checkbox" id="team27" name="team" value="49ers">
+  <label for="team27" style="margin-left: 0px; font-size: 20px;">San Francisco 49ers</label><br>
+  <input type="checkbox" id="team28" name="team" value="seahawks">
+  <label for="team28" style="margin-left: 0px; font-size: 20px;">Seattle Seahawks</label><br>
+  <input type="checkbox" id="team29" name="team" value="steelers">
+  <label for="team29" style="margin-left: 0px; font-size: 20px;">Pittsburgh Steelers</label><br>
+  <input type="checkbox" id="team30" name="team" value="buccaneers">
+  <label for="team30" style="margin-left: 0px; font-size: 20px;">Tampa Bay Buccaneers</label><br>
+  <input type="checkbox" id="team31" name="team" value="titans">
+  <label for="team31" style="margin-left: 0px; font-size: 20px;">Tennessee Titans</label><br>
+  <input type="checkbox" id="team32" name="team" value="redskins">
+  <label for="team32" style="margin-left: 0px; font-size: 20px;">Washington Football Team</label><br><br><br>
+
+  <!--Prediction Dropdown-->
+  <label for="predict">Prediction for the winner of the 2021 Superbowl (LV)<sup>*</sup></label><br>
+  <select name="predict" id="predict" style="margin-left: 350px;" required>
+    <option value="">Please Pick a Team</option>
+    <option value="kc">Kansas City Chiefs</option>
+    <option value="tb">Tampa Bay Buccaneers</option>
+  </select><br><br><br>
+
+  <!--Fav Players Text Area-->
+  <label for="players">Favorite player(s)<sup>*</sup> <small style="color: gray;">N/A if unfamiliar or don't have any favorites</small></label><br>
+  <textarea name="players" id="players" cols="100" rows="5" style="margin-left: 350px;" required></textarea><br><br><br>
+
+  <input type="submit" name="submit" id="submit"><br><br><br>
+</form>
+</body>
+</html>
