@@ -1,0 +1,42 @@
+*{
+  box-sizing: border-box;
+}
+
+.myflexboxRow{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: black;
+  padding: 5px;
+}
+
+.myflexboxColumn{
+  flex: 25%;
+  padding: 20px;
+}
+
+@media screen and (max-width: 992px){
+  .myflexboxColumn{
+    flex: 50%;
+  }
+}
+
+@media screen and (max-width: 600px){
+  .myflexboxRow{
+    flex-direction: column;
+  }
+}
+
+h1{
+  font-size: 50px;
+  font-family: Georgia;
+}
+
+h2{
+  font-size: 40px;
+  font-family: Georgia;
+}
+
+p{
+  font-size: 20px;
+  font-family: Georgia;
+}
