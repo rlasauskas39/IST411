@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 2 Exercise</title>
+
+  <link rel="stylesheet" href="exercise.css">
+
+</head>
+<body>
+
+  <h1>Responsive Four Entry Layout Using a Flexbox</h1>
+  <p><strong>For responsive effect, resize browser window.</strong></p>
+  <p>Screens 992px wide or less will be organized into two columns.</p>
+  <p>Screens 600px wide or less will be organized as stacked boxes.</p>
+
+  <div class="myflexboxRow">
+    <div class="myflexboxColumn" style="background-color: lightcoral;">
+      <h2>Hyperlink</h2> <!--Fill out hyperlink-->
+      <p><a href="" target=""></a></p>
+    </div>
+
+    <div class="myflexboxColumn" style="background-color: indianred;">
+    <h2>Image</h2>
+    <p><img src="" alt=""></p><!--Fill in Image-->
+  </div>
+
+    <div class="myflexboxColumn" style="background-color: red;">
+      <h2>Video</h2>
+      <p><video src="" controls>
+        <source src="" type="">
+          Your Browser Does Not Support Video File Type.
+      </video></p>
+    </div>
+
+    <div class="myflexboxColumn" style="background-color: maroon;">
+      <h2>Geolocation</h2>
+      <p>Click button for your current coordinates.</p>
+      <button onclick="getLocation()">Get Location</button>
+      <p id="geo"></p>
+    </div>
+  </div>
+
+  <script>
+    var x = document.getElementById("geo");
+  
+    function getLocation(){
+      if(navigator.geolocation){
+        navigator.geolocation.watchPosition(showPosition);
+      } else{
+        x.innerHTML = "Geolocation Not Supported By Browser.";
+      }
+    }
+  
+    function showPosition(position){
+      x.innerHTML="Latitude: "+ position.coords.latitiude +"<br>Longitude: " + position.coords.longitude;
+    }
+  </script>
+</body>
+</html>
