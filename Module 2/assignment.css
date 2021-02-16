@@ -1,0 +1,13 @@
+*{
+  box-sizing: border-box;
+}
+
+.myflexboxRow{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px;
+}
+
+.myflexboxColumn{
+  padding: 20px;
+}
