@@ -6,17 +6,30 @@
   display: flex;
   flex-wrap: wrap;
   padding: 5px;
-  background-color: gray;
+  background-color:white;
   margin: 15px;
+  border-style: solid;
+  border-color:black;
+  border-width: 10px;
 }
 
 .myflexboxColumn{
   padding: 20px;
 }
 
+body{
+  background-color: gray;
+}
+
 img{
   border-width: 5px;
   border-color: orange;
   border-style: solid;
+}
+
+p{
+  text-align: center;
+  font-family: fantasy;
+  font-size: larger;
 }
 
