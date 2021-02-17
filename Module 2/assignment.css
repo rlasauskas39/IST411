@@ -45,6 +45,16 @@ p{
   font-size: larger;
 }
 
+summary{
+  text-align: center;
+  font-family: Cursive;
+  font-size: xx-large;
+}
+
 small{
   font-family: Georgia;
+}
+
+hr{
+  border-color: orange;
 }
