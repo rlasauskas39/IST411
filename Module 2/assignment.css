@@ -28,6 +28,7 @@
 
 body{
   background-color: gray;
+  margin-block-end: 75px;
 }
 
 img{
