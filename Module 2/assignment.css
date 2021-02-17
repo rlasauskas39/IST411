@@ -1,5 +1,6 @@
 *{
   box-sizing: border-box;
+  
 }
 
 .myflexboxRow{
@@ -15,7 +16,7 @@
 
 img{
   border-width: 5px;
-  border-color: black;
+  border-color: orange;
   border-style: solid;
 }
 
