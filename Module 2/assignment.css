@@ -11,6 +11,7 @@
   border-style: solid;
   border-color:black;
   border-width: 10px;
+  border-radius: 25px;
 }
 
 .myflexboxColumn{
@@ -25,6 +26,7 @@ img{
   border-width: 5px;
   border-color: orange;
   border-style: solid;
+  border-radius: 10px;
 }
 
 p{
