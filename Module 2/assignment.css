@@ -6,8 +6,16 @@
   display: flex;
   flex-wrap: wrap;
   padding: 5px;
+  background-color: gray;
 }
 
 .myflexboxColumn{
   padding: 20px;
 }
+
+img{
+  border-width: 5px;
+  border-color: black;
+  border-style: solid;
+}
+
