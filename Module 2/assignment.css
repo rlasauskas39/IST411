@@ -16,6 +16,14 @@
 
 .myflexboxColumn{
   padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 775px){
+  .myflexboxRow{
+    flex-direction: column;
+  }
 }
 
 body{
@@ -27,6 +35,7 @@ img{
   border-color: orange;
   border-style: solid;
   border-radius: 10px;
+  width: 100%;
 }
 
 p{
