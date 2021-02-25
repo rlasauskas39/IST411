@@ -28,3 +28,13 @@ function validateANDadd(){
     return true;
   }
 }
+
+function clearList1(){
+  var tableRef = document.getElementById("myList1");
+  tableRef.innerHTML = " ";
+}
+
+function clearList2(){
+  var tableRef = document.getElementById("myList2");
+  tableRef.innerHTML = " ";
+}
