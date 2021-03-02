@@ -23,14 +23,33 @@ function checkPalindrome(){
       result = false;
     }
 
-    
+    var tableRef = document.getElementById("algoOne");
+    (tableRef.insertRow(tableRef.rows.length)).innerHTML = word + ":" + result;
+
+    document.forms["myForm"]["newWord"].value = "";
+    document.forms["myForm"]["algoNum"].value = "";
   }
 
   //Algorithm 2
-  else{
-    
-  }
+  else if(choice == 2){
+    var result;
+    var word = document.forms["myForm"]["newWord"].value;
+    var str = "";
 
-  document.forms["myForm"]["newWord"].value = "";
-  document.forms["myForm"]["algoNum"].value = "";
+    for(var i = word.length -1; i >= 0; i--){
+      str += word[i];
+    }
+    
+    if(word == str){
+      result = true;
+    } else{
+      result = false;
+    }
+    
+    var tableRef = document.getElementById("algoTwo");
+    (tableRef.insertRow(tableRef.rows.length)).innerHTML = word + ":" + result;
+
+    document.forms["myForm"]["newWord"].value = "";
+    document.forms["myForm"]["algoNum"].value = "";
+  }
 }
