@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Central Tendency Calculator</title>
+
+  <link rel="stylesheet" href="scrimmage.css">
+  <script src="scrimmage.js"></script>
+
+</head>
+<body>
+
+  <h1>Central Tendency Calculator</h1>
+
+  <div class="flexRow">
+    <div class="flexColumn">
+      <form name="lowRange">
+        Low end of Range: <input type="number" name="lowNumber" value="">
+        <input type="button" onclick="addLowRange()" value="Add">
+        <p id="currentLow"></p>
+      </form>
+    </div>
+    <div class="flexColumn">
+      <form name="newNumber">
+        Add a new number to the List: <input type="number" name="addNumber" value="">
+        <input type="button" onclick="addNewNumber()" value="Add"><br>
+
+        <table id="numberList">
+          <tr>
+          <th>List of Numbers:</th>
+          </tr>
+        </table>
+        
+      </form>
+    </div>
+    <div class="flexColumn">
+      <form name="highRange">
+        High end of Range: <input type="number" name="highNumber" value="">
+        <input type="button" onclick="addHighRange()" value="Add">
+        <p id="currentHigh"></p>
+      </form>
+    </div>
+  </div>
+  
+  <div class="flexRow">
+    <div class="flexColumn">
+      <h2>Mean</h2>
+      <p id="currentMean"></p>
+    </div>
+    <div class="flexColumn">
+      <h2>Median</h2>
+      <p id="currentMedian"></p>
+    </div>
+    <div class="flexColumn">
+      <h2>Mode</h2>
+      <p id="currentMode"></p>
+    </div>
+  </div>
+
+  <div class="flexRow">
+    <div class="flexColumn">
+      <input type="button" onclick="clearList()" value="Clear The List">
+    </div>
+  </div>
+</body>
+</html>
