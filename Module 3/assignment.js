@@ -29,10 +29,10 @@ function checkPalindrome(){
 
   //Algorithm 1
   if(choice == 1){
-    var result;
+    let result;
 
     //Reverses the word to compare
-    var revWord = word.split("").reverse().join("");
+    let revWord = word.split("").reverse().join("");
     
     //If original and reversed word are the same it will result in true
     if(word == revWord){
@@ -42,7 +42,7 @@ function checkPalindrome(){
     }
 
     //Insert information to the list
-    var tableRef = document.getElementById("algoOne");
+    let tableRef = document.getElementById("algoOne");
     (tableRef.insertRow(tableRef.rows.length)).innerHTML = word + ":" + result;
 
     //Clear the text boxes
@@ -53,11 +53,11 @@ function checkPalindrome(){
 
   //Algorithm 2
   else if(choice == 2){
-    var result;
-    var str = "";
+    let result;
+    let str = "";
 
     //Reverses the word
-    for(var i = word.length - 1; i >= 0; i--){
+    for(let i = word.length - 1; i >= 0; i--){
       str += word[i];
     }
     
@@ -69,8 +69,8 @@ function checkPalindrome(){
     }
     
     //Places the information into the list
-    var tableRef = document.getElementById("algoTwo");
-    (tableRef.insertRow(tableRef.rows.length)).innerHTML = word + ":" + result;
+    let tableRef = document.getElementById("algoTwo");
+    (tableRef.insertRow(tableRef.rows.length)).innerHTML = word + " : " + result;
 
     //Clears the text boxes
     document.forms["myForm"]["newWord"].value = "";
