@@ -8,12 +8,16 @@ async function getAccountInfo(){
   document.getElementById("repos").innerHTML = "";
 
   var jsonRepos = await response.json();
-  jsonRepos = JSON.stringify(jsonRepos);
 
-  var obj = await JSON.parse(jsonRepos);
-  document.getElementById("repos").innerHTML = obj.name;
-  //document.getElementById("repos").innerHTML = jsonRepos;
+  //document.getElementById("repos").innerHTML = JSON.stringify(jsonRepos);
 
-  //alert(Object.getOwnPropertyNames(obj));
+  alert("1");
+  var repoArr = [];
+  for(let i = 0; i < jsonRepos.length; i++){
+    repoArr.push(jsonRepos[i].name);
+  }
+  alert("2");
+
+  document.getElementById("repos").innerHTML = repoArr;
   alert("Done");
 }
