@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bacon Ipsum</title>
+
+  <link rel="stylesheet" href="exercise.css">
+  <script src="exercise.js"></script>
+</head>
+<body>
+  <h1>Bacon Ipsum API</h1>
+  
+  <div class="flexRow">
+    <div class="flexColumn">
+      <h2>User Info</h2>
+      <label for="newParagraphs">Number of Paragraphs</label>
+      <select id="newParagraphs">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select><br /><br />
+      <input type="button" value="Get Bacon Ipsum" onclick="getBaconIpsum()">
+    </div>
+
+    <div class="flexColumn">
+      <h2>Raw JSON Data</h2>
+      <p id="raw">
+      </p>
+    </div>
+
+    <div class="flexColumn">
+      <h2>Formatted JSON Data</h2>
+      <p id="formatted">
+      </p>
+    </div>
+  </div>
+</body>
+</html>
