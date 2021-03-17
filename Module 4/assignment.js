@@ -57,21 +57,29 @@ async function getBaconIpsum(){
 
   else{
     //Cipher #2
-    //random number generator for 0-27
+    //random number generator for 0-26
     
+    //Empty array to hold the encrypted version
     var cipher = [];
-    for(var para in json){
+
+    //Initial loop to go through the json and go through the correct number of paragraphs
+    for(let para = 0; para < json.length; para++){
+
+      //Loop through each of the letters of an individual paragraph
       for(let i = 0; i < json[para].length; i++){
+
+        //Keep the spaces and periods so that it at least still looks like a sentence
         if(json[para][i] == " " || json[para][i] == "."){
-          cipher[i] = json[para][i];
+          cipher[i] = json[para][i];    //places the space or period into the final array
         } else{
-          let ran = Math.floor(Math.random() * 27);
-          cipher.push(alphabet[ran]);
+          let ran = Math.floor(Math.random() * 27);   //generate a new number 0-26
+          cipher[i] = alphabet[ran];    //put the random letter into the final array
         }
       }
+      cipher = cipher.join("");   //Makes the array a string
+      document.getElementById("encrypted").innerHTML += cipher + "<br><br>";    //Prints the encrypted paragraphs
+      cipher = [];    //Resets the array
     }
-    cipher = cipher.join("");
-    document.getElementById("encrypted").innerHTML = cipher;
   }
   return true;
 }
