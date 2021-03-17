@@ -29,30 +29,42 @@ async function getBaconIpsum(){
 
   //Ciphers
 
+  //Define the alphabet array used in the ciphers
   var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','-'];
 
   if(document.getElementById("algoSelect").value === "option1"){
-    //Cipher #1
-    let rawData = json
+    //Cipher #1  
+    //Shift the letter by +7 in the given alphabet array
 
-    let lower = rawData.toLowerCase();
+    //Array to build the encrypted text
+    let cipher = [];
 
-    
-    //let lowerArr = lower.split("");
-    
+    //Loops through each paragraph within the json
+    for(let para = 0; para < json.length; para++){
 
-    
-    /*for(let i = 0; i < lowerArr.length; i++){
-      let a = alphabet.indexOf(lowerArr[i]);
-      let shift = a + 7;
-      lowerArr[i] = alphabet[shift];
+      //Loops through each letter of a paragraph
+      for(let i = 0; i < json[para].length; i++){
+
+        //Spaces and periods remain the same
+        if(json[para][i] == " " || json[para][i] == "."){
+          cipher[i] = json[para][i];    //Copies the space or period to final array
+        } else{
+          let letter = json[para][i];   //pulls the letter from the json
+          letter = letter.toLowerCase();    //lowercases the letter to be able to compare
+          let place = alphabet.indexOf(letter);   //finds index of letter within alphabet array
+          place += 7;   //Does the shifting so plus 7 in this case
+
+          //Check to ensure it does not go out of bounds
+          if(place > 26){
+            place -= alphabet.length;   //Keeps in the array by subtracting the out of bounds number by the length
+          }
+          cipher[i] = alphabet[place];    //Puts the shifted letter into the final array
+        }
+      }
+      cipher = cipher.join("");   //Creates a string from the array
+      document.getElementById("encrypted").innerHTML += "<p>" + cipher + "</p>";    //Puts the final string into HTML
+      cipher = [];    //Resets the array
     }
-
-    let encryption = lowerArr.toString();
-
-    document.getElementById("encrypted").innerHTML = encryption;
-
-*/
   }
 
   else{
@@ -60,7 +72,7 @@ async function getBaconIpsum(){
     //random number generator for 0-26
     
     //Empty array to hold the encrypted version
-    var cipher = [];
+    let cipher = [];
 
     //Initial loop to go through the json and go through the correct number of paragraphs
     for(let para = 0; para < json.length; para++){
@@ -72,12 +84,16 @@ async function getBaconIpsum(){
         if(json[para][i] == " " || json[para][i] == "."){
           cipher[i] = json[para][i];    //places the space or period into the final array
         } else{
-          let ran = Math.floor(Math.random() * 27);   //generate a new number 0-26
-          cipher[i] = alphabet[ran];    //put the random letter into the final array
+          let letter = json[para][i];   //pulls the letter from the json
+          letter = letter.toLowerCase();    //lowercases the letter to be able to compare
+          let place = alphabet.indexOf(letter);   //finds index of letter within alphabet array
+          alphabet.reverse();   //reverses alphabet to get the letter starting from the end
+          cipher[i] = alphabet[place];    //grabs the reversed letter and places in final array
+          alphabet.reverse();   //reverses alphabet again to get it back to the normal arrangement
         }
       }
       cipher = cipher.join("");   //Makes the array a string
-      document.getElementById("encrypted").innerHTML += cipher + "<br><br>";    //Prints the encrypted paragraphs
+      document.getElementById("encrypted").innerHTML += "<p>" + cipher + "</p>";    //Prints the encrypted paragraphs
       cipher = [];    //Resets the array
     }
   }
