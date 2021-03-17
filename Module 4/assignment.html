@@ -6,15 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bacon Ipsum</title>
 
-  <link rel="stylesheet" href="exercise.css">
-  <script src="exercise.js"></script>
+  <link rel="stylesheet" href="assignment.css">
+  <script src="assignment.js"></script>
 </head>
 <body>
   <h1>Bacon Ipsum API</h1>
   
   <div class="flexRow">
+
     <div class="flexColumn">
       <h2>User Info</h2>
+
       <label for="newParagraphs">Number of Paragraphs</label>
       <select id="newParagraphs">
         <option value="1">1</option>
@@ -23,6 +25,19 @@
         <option value="4">4</option>
         <option value="5">5</option>
       </select><br /><br />
+
+      <label for="usableWords">All Meat or Meat and Filler</label>
+      <select id="usableWords">
+        <option value="meat-and-filler">Meat and Filler</option>
+        <option value="all-meat">All Meat</option>
+      </select><br /><br />
+
+      <label for="algoSelect">Pick an Encryption Method</label>
+      <select id="algoSelect">
+        <option value="option1">Algorithm 1</option>
+        <option value="option2">Algorithm 2</option>
+      </select><br><br>
+      
       <input type="button" value="Get Bacon Ipsum" onclick="getBaconIpsum()">
     </div>
 
@@ -35,6 +50,12 @@
     <div class="flexColumn">
       <h2>Formatted JSON Data</h2>
       <p id="formatted">
+      </p>
+    </div>
+
+    <div class="flexColumn">
+      <h2>Encrypted Data</h2>
+      <p id="encrypted">
       </p>
     </div>
   </div>
