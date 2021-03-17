@@ -69,7 +69,7 @@ async function getBaconIpsum(){
 
   else{
     //Cipher #2
-    //random number generator for 0-26
+    //reverses cipher
     
     //Empty array to hold the encrypted version
     let cipher = [];

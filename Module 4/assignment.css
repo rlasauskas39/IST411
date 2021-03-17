@@ -21,10 +21,11 @@
   }
 }
 
+p{
+  word-wrap: normal;
+}
+
 h1,h2{
   text-align: center;
 }
 
-p{
-  word-wrap: normal;
-}
