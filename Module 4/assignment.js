@@ -26,7 +26,6 @@ async function getBaconIpsum(){
   }
  
 
-
   //Ciphers
 
   //Define the alphabet array used in the ciphers
