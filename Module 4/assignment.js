@@ -31,7 +31,7 @@ async function getBaconIpsum(){
 
   //Define the alphabet array used in the ciphers
   var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','-'];
-
+  console.log(alphabet);    //Show alphabet used in dev tools in browser *** new JS element
   if(document.getElementById("algoSelect").value === "option1"){
     //Cipher #1  
     //Shift the letter by +7 in the given alphabet array
@@ -45,13 +45,13 @@ async function getBaconIpsum(){
       //Loops through each letter of a paragraph
       for(let i = 0; i < json[para].length; i++){
 
-        //Spaces and periods remain the same
+        //Spaces and periods remain the same *** "||" new JS element
         if(json[para][i] == " " || json[para][i] == "."){
           cipher[i] = json[para][i];    //Copies the space or period to final array
         } else{
           let letter = json[para][i];   //pulls the letter from the json
           letter = letter.toLowerCase();    //lowercases the letter to be able to compare
-          let place = alphabet.indexOf(letter);   //finds index of letter within alphabet array
+          let place = alphabet.indexOf(letter);   //finds index of letter within alphabet array *** new JS element
           place += 7;   //Does the shifting so plus 7 in this case
 
           //Check to ensure it does not go out of bounds
@@ -61,7 +61,7 @@ async function getBaconIpsum(){
           cipher[i] = alphabet[place];    //Puts the shifted letter into the final array
         }
       }
-      cipher = cipher.join("");   //Creates a string from the array
+      cipher = cipher.join("");   //Creates a string from the array *** new JS element
       document.getElementById("encrypted").innerHTML += "<p>" + cipher + "</p>";    //Puts the final string into HTML
       cipher = [];    //Resets the array
     }
@@ -80,19 +80,19 @@ async function getBaconIpsum(){
       //Loop through each of the letters of an individual paragraph
       for(let i = 0; i < json[para].length; i++){
 
-        //Keep the spaces and periods so that it at least still looks like a sentence
+        //Keep the spaces and periods so that it at least still looks like a sentence *** "||" new JS element
         if(json[para][i] == " " || json[para][i] == "."){
           cipher[i] = json[para][i];    //places the space or period into the final array
         } else{
           let letter = json[para][i];   //pulls the letter from the json
           letter = letter.toLowerCase();    //lowercases the letter to be able to compare
-          let place = alphabet.indexOf(letter);   //finds index of letter within alphabet array
+          let place = alphabet.indexOf(letter);   //finds index of letter within alphabet array *** new JS element
           alphabet.reverse();   //reverses alphabet to get the letter starting from the end
           cipher[i] = alphabet[place];    //grabs the reversed letter and places in final array
-          alphabet.reverse();   //reverses alphabet again to get it back to the normal arrangement
+          alphabet.reverse();   //reverses alphabet again to get it back to the normal arrangement *** new JS element
         }
       }
-      cipher = cipher.join("");   //Makes the array a string
+      cipher = cipher.join("");   //Makes the array a string *** new JS element
       document.getElementById("encrypted").innerHTML += "<p>" + cipher + "</p>";    //Prints the encrypted paragraphs
       cipher = [];    //Resets the array
     }
