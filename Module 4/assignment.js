@@ -4,7 +4,10 @@ async function getBaconIpsum(){
 
   //Get value from dropdown selection and add onto api call
   var eachParagraph = document.getElementById("newParagraphs").value;
-  apiString = apiString + "?type=all-meat&paras=" + eachParagraph;
+
+  var content = document.getElementById("usableWords").value;
+
+  apiString = apiString + "?type=" + content + "&paras=" + eachParagraph;
   
   //Stores what is returned from the api
   var response = await fetch(apiString);
