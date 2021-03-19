@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.80.0">
+    <title>Pricing example · Bootstrap v5.0</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/pricing/">
+
+    
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom styles for this template -->
+    <link href="exercise.css" rel="stylesheet">
+    <script src="exercise.js"></script>
+  </head>
+  <body>
+    
+<header class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-body border-bottom shadow-sm">
+  <p class="h5 my-0 me-md-auto fw-normal">Ceasar's Cipher</p>
+</header>
+
+<main class="container">
+  <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-4">Ceasar's Cipher</h1>
+    <p class="lead">Select the number of paragraphs, content material, and cipher algorithm to receive encrypted text.</p>
+  </div>
+
+  <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+    <div class="col">
+      <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 fw-normal">User Input</h4>
+      </div>
+      <div class="card-body">
+        <label for="newParagraphs">Number of Paragraphs</label><br />
+      <select id="newParagraphs">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select><br /><br />
+
+      <label for="usableWords">All Meat or Meat and Filler</label>
+      <select id="usableWords">
+        <option value="meat-and-filler">Meat and Filler</option>
+        <option value="all-meat">All Meat</option>
+      </select><br /><br />
+
+      <label for="algoSelect">Pick an Encryption Method</label>
+      <select id="algoSelect">
+        <option value="option1">Algorithm 1</option>
+        <option value="option2">Algorithm 2</option>
+      </select><br><br>
+      
+      <input type="button" value="Get Bacon Ipsum" onclick="getBaconIpsum()">
+      </div>
+    </div>
+    </div>
+    <div class="col">
+      <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 fw-normal">Raw JSON</h4>
+      </div>
+      <div class="card-body">
+        <p id="raw">
+        </p>
+      </div>
+    </div>
+    </div>
+    <div class="col">
+      <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 fw-normal">Formatted Text</h4>
+      </div>
+      <div class="card-body">
+        <p id="formatted">
+        </p>
+      </div>
+    </div>
+    </div>
+    <div class="col">
+      <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 fw-normal">Encrypted Text</h4>
+      </div>
+      <div class="card-body">
+        <p id="encrypted">
+        </p>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <footer class="pt-4 my-md-5 pt-md-5 border-top">
+    <div class="row">
+      <div class="col-6 col-md">
+        <h5>Features</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="link-secondary" href="#">Cool stuff</a></li>
+          <li><a class="link-secondary" href="#">Random feature</a></li>
+          <li><a class="link-secondary" href="#">Team feature</a></li>
+          <li><a class="link-secondary" href="#">Stuff for developers</a></li>
+          <li><a class="link-secondary" href="#">Another one</a></li>
+          <li><a class="link-secondary" href="#">Last time</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Resources</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="link-secondary" href="#">Resource</a></li>
+          <li><a class="link-secondary" href="#">Resource name</a></li>
+          <li><a class="link-secondary" href="#">Another resource</a></li>
+          <li><a class="link-secondary" href="#">Final resource</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>About</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="link-secondary" href="#">Team</a></li>
+          <li><a class="link-secondary" href="#">Locations</a></li>
+          <li><a class="link-secondary" href="#">Privacy</a></li>
+          <li><a class="link-secondary" href="#">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</main>
+
+
+    
+  </body>
+</html>
