@@ -28,16 +28,13 @@ async function getBaconIpsum(){
     document.getElementById("formatted").innerHTML += "<p>" + json[para] + "</p>";
   }
  
-
   //Ciphers
-
   //Define the alphabet array used in the ciphers
   var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','-'];
   console.log(alphabet);    //Show alphabet used in dev tools in browser *** new JS element
   if(document.getElementById("algoSelect").value === "option1"){
     //Cipher #1  
     //Shift the letter by +7 in the given alphabet array
-
     //Array to build the encrypted text
     let cipher = [];
 
