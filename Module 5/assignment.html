@@ -35,7 +35,8 @@
 <main class="container">
   <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
     <div class="col-md-6 px-0">
-      <h1 class="display-4 fst-italic" id="quoteLocation">Quote will go here</h1>
+      <h1 class="display-4 fst-italic" id="quoteLocation">Quote will go here</h1><br>
+      <p class="display-4 fst-italic" id="authorLocation"></p>
     </div>
   </div>
 
@@ -45,12 +46,12 @@
         <div class="col p-4 d-flex flex-column position-static">
           <h3 class="mb-0">Generate New Quote!</h3>
           <p class="card-text mb-auto">How long should the new quote be?</p>
-          <select>
-            <option value="">Short</option>
-            <option value="">Medium</option>
-            <option value="">Long</option>
-          </select><br /><br />
-          <input type="button" value="Generate Quote!" onclick="getQuote()">
+          <select id="lengthChosen" style="margin-right: auto;">
+            <option value="short">Short</option>
+            <option value="medium">Medium</option>
+            <option value="long">Long</option>
+          </select><br />
+          <input type="button" value="Generate Quote!" style="text-align: left; margin-right: auto;" onclick="getQuote()">
         </div>
       </div>
     </div>
