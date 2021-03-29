@@ -3,18 +3,22 @@ async function getQuote(){
   var maxLength;
   var length = document.getElementById("lengthChosen").value;
 
+  //Loop through json and += options of each tag to another dropdown for optional tags
+  //Link to tags json https://api.quotable.io/tags
+  //Find two new bootstrap elements
+
   if(length === "short"){
-    minLength = 0;
-    maxLength = 50;
+    minLength = "";
+    maxLength = "maxLength=50";
   } else if(length === "medium"){
-    minLength = 50,
-    maxLength = 150;
+    minLength = "minLength=50",
+    maxLength = "&maxLength=150";
   } else{
-    minLength = 150;
-    maxLength = 300;
+    minLength = "minLength=150";
+    maxLength = "";
   }
 
-  var apiString = "https://api.quotable.io/random?minLength=" + minLength + "&maxLength=" + maxLength;
+  var apiString = "https://api.quotable.io/random?" + minLength + maxLength;
 
   var response = await fetch(apiString);
   var json = await response.json();
@@ -22,9 +26,6 @@ async function getQuote(){
   var quote = json.content;
   var author = json.author;
 
-  alert(json.length);
-
   document.getElementById("quoteLocation").innerHTML = quote;
   document.getElementById("authorLocation").innerHTML = author;
-
 }
