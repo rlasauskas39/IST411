@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.80.0">
-    <title>Blog Template · Bootstrap v5.0</title>
+    <title>Random Quote Generator</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/blog/">
 
@@ -28,6 +28,8 @@
       <div class="col-4 text-center">
         <a class="blog-header-logo text-dark" href="#">Random Quote Generator</a>
       </div>
+    </div>
+    <div id="alertLocation">
     </div>
   </header>
 </div>
@@ -51,7 +53,35 @@
             <option value="medium">Medium</option>
             <option value="long">Long</option>
           </select><br />
-          <input type="button" value="Generate Quote!" style="text-align: left; margin-right: auto;" onclick="getQuote()">
+
+          <p class="card-text mb-auto">Filter quotes by tag</p>
+          <select id="tags" style="margin-right: auto;">
+            <option value="">Optional Tags</option>
+            <option value="&tags=business">Business</option>
+            <option value="&tags=education">Education</option>
+            <option value="&tags=faith">Faith</option>
+            <option value="&tags=famous-quotes">Famous Quotes</option>
+            <option value="&tags=friendship">Friendship</option>
+            <option value="&tags=future">Future</option>
+            <option value="&tags=happiness">Happiness</option>
+            <option value="&tags=history">History</option>
+            <option value="&tags=inspirational">Inspirational</option>
+            <option value="&tags=life">Life</option>
+            <option value="&tags=love">Love</option>
+            <option value="&tags=nature">Nature</option>
+            <option value="&tags=politics">Politics</option>
+            <option value="&tags=proverb">Proverb</option>
+            <option value="&tags=religion">Religion</option>
+            <option value="&tags=science">Science</option>
+            <option value="&tags=success">Success</option>
+            <option value="&tags=technology">Technology</option>
+            <option value="&tags=wisdom">Wisdom</option>
+          </select><br /> 
+                  
+          <input type="button" class="btn btn-outline-dark" value="Generate Quote!" style="text-align: left; margin-right: auto;" onclick="getQuote()"><br />
+          
+          
+          
         </div>
       </div>
     </div>
@@ -60,7 +90,7 @@
 </main><!-- /.container -->
 
 <footer class="blog-footer">
-  <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+  <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p> 
 </footer> 
   </body>
 </html>
