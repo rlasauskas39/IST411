@@ -52,6 +52,8 @@ class Game extends React.Component{
       }],
       rIsNext: true,
       stepNumber: 0,
+
+      info: 0,
     };
   }
  
@@ -59,9 +61,19 @@ class Game extends React.Component{
     const history = this.state.history.slice(0, this.state.stepNumber + 1);
     const current = history[this.state.stepNumber];
     const squares = current.squares.slice();
-    if (calculateWinner(squares) || squares[i]){
+
+    /* if (calculateWinner(squares) || squares[i]){
       return; //THIS LOCATION FOR IF TAKEN/GAME OVER
+    }  */
+
+    if(calculateWinner(squares)){
+      this.setState({info: 1});
+      return;
+    } else if(squares[i]){
+      this.setState({info: 2});
+      return;
     }
+
     squares[i] = this.state.rIsNext ? 'R' : 'J';
     this.setState({
       history: history.concat([{
@@ -69,6 +81,7 @@ class Game extends React.Component{
       }]),
       stepNumber: history.length,
       rIsNext: !this.state.rIsNext,
+      info: 0,
     });
   }
 
@@ -76,6 +89,7 @@ class Game extends React.Component{
     this.setState({
       stepNumber: step,
       rIsNext: (step % 2) === 0,
+      info: 0,
     });
   }
 
@@ -83,6 +97,8 @@ class Game extends React.Component{
     const history = this.state.history;
     const current = history[this.state.stepNumber];
     const winner = calculateWinner(current.squares);
+    const currentInfo = this.state.info;
+
 
     const moves = history.map((step, move) => {
       const desc = move ?
@@ -102,6 +118,15 @@ class Game extends React.Component{
       status = 'Next Player: ' + (this.state.rIsNext ? 'R' : 'J');
     }
 
+    let moreInfo;
+    if(currentInfo === 1){
+      moreInfo = "--Game is Already Over--";
+    } else if(currentInfo === 2){
+      moreInfo = "--Space is Already Taken--"
+    } else{
+      moreInfo = "";
+    }
+
     return(
       <div className="game">
         <div className="game-board">
@@ -112,6 +137,7 @@ class Game extends React.Component{
         </div>
         <div className="game-info">
           <div>{status}</div>
+          <div>{moreInfo}</div>
           <ol>{moves}</ol>
         </div>
       </div>
@@ -136,6 +162,10 @@ function calculateWinner(squares){
     [2, 5, 8],
     [0, 4, 8],
     [2, 4, 6],
+    [0, 2, 8],
+    [2, 8, 6],
+    [8, 6, 0],
+    [6, 0, 2],
   ];
   for(let i = 0; i < lines.length; i++){
     const [a, b, c] = lines[i];
