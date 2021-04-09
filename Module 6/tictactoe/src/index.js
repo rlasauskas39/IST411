@@ -52,7 +52,6 @@ class Game extends React.Component{
       }],
       rIsNext: true,
       stepNumber: 0,
-
       info: 0,
     };
   }
@@ -61,10 +60,6 @@ class Game extends React.Component{
     const history = this.state.history.slice(0, this.state.stepNumber + 1);
     const current = history[this.state.stepNumber];
     const squares = current.squares.slice();
-
-    /* if (calculateWinner(squares) || squares[i]){
-      return; //THIS LOCATION FOR IF TAKEN/GAME OVER
-    }  */
 
     if(calculateWinner(squares)){
       this.setState({info: 1});
