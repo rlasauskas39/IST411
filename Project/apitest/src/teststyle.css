@@ -1,0 +1,11 @@
+a,
+.link {
+  color: #42ca59;
+}
+a:hover {
+  color: #30a944;
+}
+.widget {
+  color: #fff;
+  background: #42ca59;
+}
