@@ -1,11 +1,59 @@
 a,
 .link {
-  color: #42ca59;
+  color: #42aaca;
 }
 a:hover {
-  color: #30a944;
+  color: #246c82;
 }
-.widget {
-  color: #fff;
-  background: #42ca59;
+h4 {
+  font-size: 2rem;
+  color: #5f5959;
+}
+h2 {
+  font-size: 3rem;
+}
+body {
+  background-color: #f5f5dc;
+}
+.showcase {
+  background-color: #cecece;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: medium solid;
+  border-radius: 30px;
+}
+button.bg-primary {
+  transition-duration: 0.4s;
+  border: 2px solid #0062cc;
+  color: white;
+  margin: 2rem;
+  border-radius: 5px;
+  padding: 1rem;
+}
+button.bg-primary:hover {
+  color: black;
+}
+label {
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 500;
+}
+.mast-title {
+  font-size: 4rem;
+}
+input[type=text] {
+  width: 100%;
+  padding: 10px 15px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 2px solid #0062cc;
+}
+select {
+  width: 100%;
+  padding: 10px 15px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 2px solid #0062cc;
 }
