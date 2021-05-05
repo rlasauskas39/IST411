@@ -3,18 +3,6 @@ import Description from './components/desc';
 import './index.css'
 import './teststyle.css';
 
-/* 
-  May add:
-  Pages - Next and back buttons after Description tag, state variable to hold page number
-  If a brewery value is blank to put something readable in its place
-*/
-
-/*
-  Potential Problems:
-  Timestamp is pointless to show, but date is good
-
-*/
-
 class App extends Component{
   constructor(){
     super()
@@ -23,6 +11,7 @@ class App extends Component{
     this.handleClickId = this.handleClickId.bind(this)
     // this.handleClickPageUp = this.handleClickPageUp.bind(this)
     // this.handleClickPageDown = this.handleClickPageDown.bind(this)
+    
 
     this.state = {
       description: [],
@@ -107,7 +96,7 @@ class App extends Component{
   //   this.handleClickSearch();
   // }
   
-
+  
   render(){
     return(
       <div className="container">
@@ -243,7 +232,7 @@ class App extends Component{
               <button className="bg-primary" onClick={this.handleClickPageUp}>Next Page</button>
             </div>
         </nav> */}
-        
+
         <footer class="footer bg-light">
             <div class="container">
                 <div class="row">
@@ -257,6 +246,9 @@ class App extends Component{
                 </div>
             </div>
         </footer>
+
+        
+
       </div>
     )
   }
