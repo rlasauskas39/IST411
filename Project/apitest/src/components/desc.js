@@ -6,8 +6,8 @@ const Description = ({description}) => {
       {description.map((brewery) => (
          <section class="showcase">
            <div class="container-fluid p-0">
-             <div class="row no-gutters">
-                <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+             <div class="row">
+                <div class="col-xl-9 order-lg-1 my-auto showcase-text">
                   <h2>{brewery.name}</h2>
                   <h4><strong>ID#: </strong>{brewery.id}</h4>
                   <p><strong>Type: </strong>{brewery.brewery_type}</p>

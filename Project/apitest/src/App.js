@@ -3,18 +3,39 @@ import Description from './components/desc';
 import './index.css'
 import './teststyle.css';
 
+/* 
+  May add:
+  Pages - Next and back buttons after Description tag, state variable to hold page number
+  If a brewery value is blank to put something readable in its place
+*/
+
+/*
+  Potential Problems:
+  Timestamp is pointless to show, but date is good
+
+*/
+
 class App extends Component{
   constructor(){
     super()
-    this.handleClick = this.handleClick.bind(this)
+    this.handleClickSearch = this.handleClickSearch.bind(this)
+    this.handleClickRandom = this.handleClickRandom.bind(this)
+    this.handleClickId = this.handleClickId.bind(this)
+    // this.handleClickPageUp = this.handleClickPageUp.bind(this)
+    // this.handleClickPageDown = this.handleClickPageDown.bind(this)
+
+    this.state = {
+      description: [],
+      userName: "",
+      userState: "",
+      userCity: "",
+      userType: "",
+      userId: "",
+      inputError: "",
+      pageNumber: 1
+    }
   }
-  state = {
-    description: [],
-    userName: "",
-    userState: "",
-    userCity: "",
-    userType: ""
-  }
+  
 
   myChangeHandler = (event) => {
     let nam = event.target.name;
@@ -22,31 +43,77 @@ class App extends Component{
     this.setState({[nam]: val});
   }
 
-  handleClick(){
+  handleClickSearch(){
+    this.setState({pageNumber: 1})
     let name = "&by_name=" + this.state.userName
     let city = "&by_city=" + this.state.userCity
     let state = "&by_state=" + this.state.userState
     let type = "&by_type=" + this.state.userType
+    let page = "&page=" + this.state.pageNumber
 
-    fetch("https://api.openbrewerydb.org/breweries?per_page=50" + city + name + state + type)
+    fetch("https://api.openbrewerydb.org/breweries?per_page=50" + page + city + name + state + type)
     .then(res => res.json())
     .then((data) => {
       this.setState({description: data})
+      this.setState({inputError: ""})
     })
   }
 
-  /* 
-  May add:
-  Random Brewery button
-  search by ID number button
-  */
+  handleClickRandom(){
+    let id = parseInt((Math.random() * 7861) + 8034);
+    fetch("https://api.openbrewerydb.org/breweries/" + id)
+    .then(res => res.json())
+    .then((data) => {
+      this.setState({description: [data]})
+      this.setState({inputError: ""})
+    })
+  }
+
+  handleClickId(){
+    let id = this.state.userId;
+    parseInt(id);
+    if(id < 8034 || id > 15895){
+      this.setState({inputError: "Invalid input. Please enter a value within the range 8034-15895"});
+    } else {
+      fetch("https://api.openbrewerydb.org/breweries/" + id)
+      .then(res => res.json())
+      .then((data) => {
+        this.setState({description: [data]})
+        this.setState({inputError: ""})
+      })
+    }
+  }
+
+  
+  // handleClickPageDown(){
+  //   let page = this.state.pageNumber;
+  //   page--;
+  //   if(page < 1){
+  //     this.setState({pageNumber: 1})
+  //   } else {
+  //     this.setState({pageNumber: page})
+  //   }
+  //   this.handleClickSearch();
+  // }
+
+  // handleClickPageUp(){
+  //   let page = this.state.pageNumber;
+  //   page++;
+  //   if(page < 1){
+  //     this.setState({pageNumber: 1})
+  //   } else {
+  //     this.setState({pageNumber: page})
+  //   }
+  //   this.handleClickSearch();
+  // }
+  
 
   render(){
     return(
       <div className="container">
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
-                <h2 class="navbar-brand">Brewery Locator</h2>
+              <h2 class="navbar-brand">Brewery Finder</h2>
             </div>
         </nav>
         <header class="masthead text-white text-center">
@@ -58,14 +125,14 @@ class App extends Component{
                   <div class="col-lg-3">
                     <div class="mx-auto mb-lg-0">
                       <label for="userName">Name:</label><br />
-                      <input type="text" name="userName" id="userName" placeholder="Search by Name" onChange={this.myChangeHandler}></input>
+                      <input type="text" class="main-text" name="userName" id="userName" placeholder="Search by Name" onChange={this.myChangeHandler}></input>
                     </div>
                   </div>
 
                   <div class="col-lg-3">
                     <div class="mx-auto mb-lg-0">
                       <label for="userCity">City:</label><br />
-                      <input type="text" name="userCity" id="userCity" placeholder="Search by City" onChange={this.myChangeHandler}></input>
+                      <input type="text" class="main-text" name="userCity" id="userCity" placeholder="Search by City" onChange={this.myChangeHandler}></input>
                     </div>
                   </div>
 
@@ -147,20 +214,42 @@ class App extends Component{
                     </div>
                   </div>
                 </div>
+
                 <div class="col-xl-9 mx-auto">
-                  <button className="bg-primary" onClick={this.handleClick}>Find Breweries</button>
+                  <button className="bg-primary" onClick={this.handleClickSearch}>Find Breweries</button>
+                </div>
+
+                <div class="col-xl-9 mx-auto">
+                  <button className="btn-random" onClick={this.handleClickRandom}>Random Brewery</button>
+                </div>
+
+                <div class="col-xl-9 mx-auto">
+                  <input type="text" class="id-text" name="userId" id="userId" placeholder="8034-15895" onChange={this.myChangeHandler}></input>
+                  <button className="bg-primary" onClick={this.handleClickId}>Search by ID</button>
+                </div>
+
+                <div class="col-xl-9 mx-auto error-display">
+                  <p>{this.state.inputError}</p>
                 </div>
             </div>
         </header>
 
         <Description description={this.state.description} />
+
+        {/* <nav class="navbar">
+            <div class="container">
+              <button className="bg-primary" onClick={this.handleClickPageDown}>Previous Page</button>
+              <p>{this.state.pageNumber}</p>
+              <button className="bg-primary" onClick={this.handleClickPageUp}>Next Page</button>
+            </div>
+        </nav> */}
         
         <footer class="footer bg-light">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
                         <ul class="list-inline mb-2">
-                            <li class="list-inline-item"><p>Credit to Open Brewery DB by Chris Mears</p></li>
+                            <li class="list-inline-item"><p>Credit to Open Brewery DB by Chris J Mears</p></li>
                         </ul>
                         <p class="text-muted small mb-4 mb-lg-0">Page Created by Ryan Lasauskas</p>
                     </div>
