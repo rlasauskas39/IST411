@@ -1,7 +1,8 @@
-import React from 'react'
- 
-const vueDescription = ({description}) => (
-  <div>
+import React from 'react';
+
+const Description = ({description}) => {
+  return(
+    <div>
       {description.map((brewery) => (
          <section class="showcase">
            <div class="container-fluid p-0">
@@ -24,7 +25,7 @@ const vueDescription = ({description}) => (
          </section>
       ))}
     </div>
-)
+  )
+};
 
-
-export default vueDescription
+export default Description
