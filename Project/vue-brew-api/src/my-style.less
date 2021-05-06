@@ -1,0 +1,111 @@
+@link-color:        #42aaca;
+@link-color-hover:  darken(@link-color, 20%);
+
+@card-title-size: 3rem;
+
+@card-id-size: 2rem;
+@card-id-color: #5f5959;
+
+@card-color: #cecece;
+
+@background-color: #f5f5dc;
+
+@border-blue: #007bff;
+@button-green: #129e00;
+@error-red: #ff2020;
+
+@border-weight: 2px;
+
+a,
+.link {
+  color: @link-color;
+}
+a:hover {
+  color: @link-color-hover;
+}
+h4 {
+  font-size: @card-id-size;
+  color: @card-id-color;
+}
+h2 {
+  font-size: @card-title-size;
+}
+body {
+  background-color: @background-color;
+}
+.showcase {
+  background-color: @card-color;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: medium solid;
+  border-radius: 30px;
+}
+button.bg-primary {
+  transition-duration: 0.4s;
+  border: @border-weight solid @border-blue;
+  color: white;
+  margin: 2rem;
+  border-radius: 5px;
+  padding: 1rem;
+}
+button.bg-primary:hover {
+  color: black;
+}
+label {
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 500;
+}
+.mast-title {
+  font-size: 4rem;
+}
+.main-text {
+  width: 100%;
+  padding: 10px 15px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: @border-weight solid @border-blue;
+}
+select {
+  width: 100%;
+  padding: 10px 15px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: @border-weight solid @border-blue;
+}
+button.btn-random {
+  width: 75%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  font-size: 2rem;
+  border: @border-weight solid @button-green;
+  background-color: @button-green;
+  border-radius: 15px;
+  transition-duration: 0.4s;
+  color: white;
+}
+button.btn-random:hover {
+  color: black;
+  background-color: white;
+}
+footer, nav, header {
+  border: @border-weight solid black;
+}
+.id-text {
+  padding: 10px 15px;
+  margin-right: 15px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: @border-weight solid @border-blue;
+  width: 25%;
+}
+.error-display {
+  background-color: @error-red;
+  margin: 15px;
+  border-radius: 15px;
+  p{
+    margin: 15px;
+  }
+}
