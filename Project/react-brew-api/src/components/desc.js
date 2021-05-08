@@ -18,7 +18,7 @@ const Description = ({description}) => {
                   <p><strong>Country: </strong>{brewery.country}</p>
                   <p><strong>Phone: </strong>{brewery.phone}</p>
                   <p><strong>Website: </strong><a href={brewery.website_url}>{brewery.website_url}</a></p>
-                  <p><strong>Last Database Update: </strong>{brewery.updated_at}</p>
+                  <p><strong>Last Update: </strong>{brewery.updated_at}</p>
                 </div>
              </div>
            </div>

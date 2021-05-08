@@ -9,10 +9,7 @@ class App extends Component{
     this.handleClickSearch = this.handleClickSearch.bind(this)
     this.handleClickRandom = this.handleClickRandom.bind(this)
     this.handleClickId = this.handleClickId.bind(this)
-    // this.handleClickPageUp = this.handleClickPageUp.bind(this)
-    // this.handleClickPageDown = this.handleClickPageDown.bind(this)
     
-
     this.state = {
       description: [],
       userName: "",
@@ -71,31 +68,7 @@ class App extends Component{
         this.setState({inputError: ""})
       })
     }
-  }
-
-  
-  // handleClickPageDown(){
-  //   let page = this.state.pageNumber;
-  //   page--;
-  //   if(page < 1){
-  //     this.setState({pageNumber: 1})
-  //   } else {
-  //     this.setState({pageNumber: page})
-  //   }
-  //   this.handleClickSearch();
-  // }
-
-  // handleClickPageUp(){
-  //   let page = this.state.pageNumber;
-  //   page++;
-  //   if(page < 1){
-  //     this.setState({pageNumber: 1})
-  //   } else {
-  //     this.setState({pageNumber: page})
-  //   }
-  //   this.handleClickSearch();
-  // }
-  
+  }  
   
   render(){
     return(
@@ -225,14 +198,6 @@ class App extends Component{
 
         <Description description={this.state.description} />
 
-        {/* <nav class="navbar">
-            <div class="container">
-              <button className="bg-primary" onClick={this.handleClickPageDown}>Previous Page</button>
-              <p>{this.state.pageNumber}</p>
-              <button className="bg-primary" onClick={this.handleClickPageUp}>Next Page</button>
-            </div>
-        </nav> */}
-
         <footer class="footer bg-light">
             <div class="container">
                 <div class="row">
@@ -241,14 +206,10 @@ class App extends Component{
                             <li class="list-inline-item"><p>Credit to Open Brewery DB by Chris J Mears</p></li>
                         </ul>
                         <p class="text-muted small mb-4 mb-lg-0">Page Created by Ryan Lasauskas</p>
-                    </div>
-                    
+                    </div>  
                 </div>
             </div>
         </footer>
-
-        
-
       </div>
     )
   }
