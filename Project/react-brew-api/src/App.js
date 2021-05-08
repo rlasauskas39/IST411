@@ -6,10 +6,13 @@ import './my-style.css';
 class App extends Component{
   constructor(){
     super()
+
+    // Needed for clicking buttons to run a method
     this.handleClickSearch = this.handleClickSearch.bind(this)
     this.handleClickRandom = this.handleClickRandom.bind(this)
     this.handleClickId = this.handleClickId.bind(this)
     
+    //All state variables that I need, holds data returned from API, error information, and information provided by the user
     this.state = {
       description: [],
       userName: "",
@@ -17,53 +20,70 @@ class App extends Component{
       userCity: "",
       userType: "",
       userId: "",
-      inputError: "",
-      pageNumber: 1
+      inputError: ""
     }
   }
   
-
+  //Change handler to automatically change the state variables to be updated when a text box is filled in or a dropdown option is selected
   myChangeHandler = (event) => {
     let nam = event.target.name;
     let val = event.target.value;
     this.setState({[nam]: val});
   }
 
+  //Method to do the filtered search on the database
   handleClickSearch(){
-    this.setState({pageNumber: 1})
+    //Parameters for the API call that will be used to filter
     let name = "&by_name=" + this.state.userName
     let city = "&by_city=" + this.state.userCity
     let state = "&by_state=" + this.state.userState
     let type = "&by_type=" + this.state.userType
-    let page = "&page=" + this.state.pageNumber
 
-    fetch("https://api.openbrewerydb.org/breweries?per_page=50" + page + city + name + state + type)
+    //Make the API call with all necessary filters implemented
+    fetch("https://api.openbrewerydb.org/breweries?per_page=50" + city + name + state + type)
     .then(res => res.json())
     .then((data) => {
+
+      //Sets the state of the array of JSON objects to read later on, and the error value so that the error is not displayed
       this.setState({description: data})
       this.setState({inputError: ""})
     })
   }
 
+  //Method for the random search
   handleClickRandom(){
+    //Random number between 8034 and 15895 to use in the API call
     let id = parseInt((Math.random() * 7861) + 8034);
+
+    //Makes the API call with the random ID number
     fetch("https://api.openbrewerydb.org/breweries/" + id)
     .then(res => res.json())
     .then((data) => {
+
+      //Sets the state to the JSON and places in an array so that the .map works in desc.js, and sets the error value to nothing so the error is not displayed
       this.setState({description: [data]})
       this.setState({inputError: ""})
     })
   }
 
+  //Method for the ID search
   handleClickId(){
+    //Variable to hold the ID chosen by the user
     let id = this.state.userId;
+
+    //Ensures the ID number is an integer not a string
     parseInt(id);
+
+    //Checks to see if the chosen ID number falls within the acceptable range, if not then the error is given a statement so it will show on the screen. If it is within the range it will make the API call and return the JSON
     if(id < 8034 || id > 15895){
       this.setState({inputError: "Invalid input. Please enter a value within the range 8034-15895"});
     } else {
+      //Makes the API call with chosen ID number
       fetch("https://api.openbrewerydb.org/breweries/" + id)
       .then(res => res.json())
       .then((data) => {
+
+        //Sets state variables to the returned data and a no error response
         this.setState({description: [data]})
         this.setState({inputError: ""})
       })
