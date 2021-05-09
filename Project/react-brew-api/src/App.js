@@ -113,13 +113,6 @@ class App extends Component{
 
                   <div class="col-lg-3">
                     <div class="mx-auto mb-lg-0">
-                      <label for="userCity">City:</label><br />
-                      <input type="text" class="main-text" name="userCity" id="userCity" placeholder="Search by City" onChange={this.myChangeHandler}></input>
-                    </div>
-                  </div>
-
-                  <div class="col-lg-3">
-                    <div class="mx-auto mb-lg-0">
                       <label for="userType">Type: </label><br />
                       <select id="userType" name="userType" onChange={this.myChangeHandler}>
                         <option value="">Search by Type</option>
@@ -134,6 +127,13 @@ class App extends Component{
                         <option value="proprietor">Proprietor</option>
                         <option value="closed">Closed</option>
                       </select>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-3">
+                    <div class="mx-auto mb-lg-0">
+                      <label for="userCity">City:</label><br />
+                      <input type="text" class="main-text" name="userCity" id="userCity" placeholder="Search by City" onChange={this.myChangeHandler}></input>
                     </div>
                   </div>
 
